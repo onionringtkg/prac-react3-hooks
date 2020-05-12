@@ -2,13 +2,13 @@ import React from 'react'
 
 const Event = ({ dispatch, event }) => {
     const handleDeleteEvent = () => {
-    const result = window.confirm(event.title + "を削除します。よろしいですか？")
-    if (result) {
-        dispatch({
-        type: 'DELETE_EVENT',
-        id: event.id
-        })
-    }
+    const result = window.confirm(`${event.title}を削除します。よろしいですか？`)
+        if (result) {
+            dispatch({
+            type: 'DELETE_EVENT',
+            id: event.id
+            })
+        }
     }
 
     return (
