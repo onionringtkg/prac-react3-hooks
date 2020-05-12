@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import reducer from '../reducers/index'
 
+import Event from './Event'
+
 const App = () =>  {
   const [state, dispatch] = useReducer(reducer, [])
   const [title, setTitle] = useState('')
@@ -14,7 +16,7 @@ const App = () =>  {
     e.preventDefault()
     //dispatch
     dispatch({
-      type: 'CREATE_EVENTS',
+      type: 'CREATE_EVENT',
       title,
       body
     })
@@ -38,7 +40,6 @@ const App = () =>  {
         </div>
 
         <button className="btn btn-primary" onClick={addEvent}>作成</button>
-        <button className="btn btn-danger">削除</button>
         <button className="btn btn-danger">全てを削除</button>
       </form>
 
@@ -53,7 +54,7 @@ const App = () =>  {
           </tr>
         </thead>
         <tbody>
-
+          { state.map((event, index) => (<Event key={index} event={event} dispatch={dispatch} />)) }
         </tbody>
       </table>
     </div>
