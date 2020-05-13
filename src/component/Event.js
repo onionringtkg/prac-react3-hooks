@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import AppContext from '../contexts/AppContext'
 
-const Event = ({ dispatch, event }) => {
+const Event = ({ event }) => {
+    const { dispatch } = useContext(AppContext)
+
     const handleDeleteEvent = () => {
-    const result = window.confirm(`${event.title}を削除します。よろしいですか？`)
+        const result = window.confirm(`${event.title}を削除します。よろしいですか？`)
         if (result) {
             dispatch({
             type: 'DELETE_EVENT',
