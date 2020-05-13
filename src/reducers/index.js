@@ -1,4 +1,4 @@
-import { combineReducers, combineReducers } from 'redux'
+import { combineReducers } from 'redux'
 
 import events from './events'
 import operationLogs from './operationLogs'

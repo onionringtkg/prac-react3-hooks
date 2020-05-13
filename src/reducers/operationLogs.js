@@ -17,3 +17,5 @@ const operationLogs = (state = [], action) => {
             return state
     }
 }
+
+export default operationLogs
